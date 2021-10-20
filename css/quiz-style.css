@@ -40,6 +40,10 @@ h1 {
   font-size: 48px;
 }
 
-.time-left {
+#timeinput {
   font-size: 40px;
+}
+
+.nodisplay {
+  display: none;
 }

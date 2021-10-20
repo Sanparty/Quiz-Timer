@@ -92,8 +92,11 @@ function buttonClick() {
      document.getElementById("timeperquestion").innerHTML = `
     <p>time per question: ${questionsleftproper}</p>`;
     } else {
-        document.querySelector(".time-left").innerHTML = `
+        document.querySelector(".result").innerHTML = `
         <h1>Congrats on finishing the test</h1>`;
+        document.querySelector("#timeinput").classList.add("nodisplay");
+        document.querySelector("#timerstart").classList.add("nodisplay");
+        document.querySelector("#timeperquestion").classList.add("nodisplay");
     }
 }
 
