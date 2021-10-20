@@ -32,18 +32,77 @@
 //   </div>
 //   `;
 
-  var t = 10;
-  var i = 10;
+  
 
 
-document.getElementById("button").innerHTML = `
-<button onclick="buttonClick()">Questions left</button>
-<input type="text" id="inc" value="${i}"></input>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // Create a new form element
+ const lengthTime = document.createElement("form");
+ lengthTime.classList.add(`test_duration`);
+
+ // Populate form with an input and a button
+ lengthTime.innerHTML = `
+    <h1>Tell me the details of your quiz</h1>
+   <input type="number" id="test_duration" name="test_duration" placeholder="Duration in minutes">
+   <input type="number" id="test_questions" name="test_questions" placeholder="# of Questions">
+   <button>Submit</button>
+ `;
+
+ // Add event listener to the form submit action
+ lengthTime.addEventListener("submit", (e) => {
+   // Stop form from reloading the page
+   e.preventDefault();
+
+   // Get the value from the form input
+   let newDuration = lengthTime.querySelector("#test_duration").value;
+   let newQuestions = lengthTime.querySelector("#test_questions").value;
+  
+   // Set the value of the field
+   document.querySelector("#timeinput").innerHTML = `Good Luck!` ;
+
+   // Clear the form input
+   lengthTime.querySelector("input").value = "";
+   console.log(newDuration, newQuestions);
+
+   var t = newDuration;
+   var i = newQuestions;
+
+   document.getElementById("button").innerHTML = `
+<button id="btn" class="nodisplay">Finished Question</button>
+<input type="text" size="3" align=center id="inc" value="${i}"></input><span id="qleft"> questions left</span>
 `;
+
+var btn = document.getElementById("btn");
+btn.addEventListener("click", function() {
+	buttonClick()
+}, false);
 
 document.getElementById("timerstart").innerHTML = `
-<button onclick="timerstartClick()">Start Timer</button>
+<button id="start">Start Timer</button>
 `;
+
+var start = document.getElementById("start");
+start.addEventListener("click", function() {
+	timerstartClick()
+}, false);
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -65,13 +124,15 @@ function timerstartClick() {
     var fiveMinutes = 60 * t,
         display = document.querySelector('#timeinput');
     startTimer(fiveMinutes, display);
+    document.getElementById("start").classList.add("nodisplay");
+    document.getElementById("btn").classList.remove("nodisplay");
+    // let endquiz = document.createElement("div");
+    // endquiz.classList.add(`endquiz`);
+    // endquiz.innerHTML = `
+    // <a href="index.html"><button id="newquiz">Start New Quiz</button></a>`;
+    // addbutton = document.querySelector("#qleft");
+    // addbutton.append(endquiz);
 };
-
-
-
-
-
-
 
 function buttonClick() {
     let timeelapsed = document.querySelector("#timeinput").innerHTML;
@@ -90,20 +151,28 @@ function buttonClick() {
     let questionsleftproper = timeconversion(questionsleft);
     console.log(questionsleftproper)
      document.getElementById("timeperquestion").innerHTML = `
-    <p>time per question: ${questionsleftproper}</p>`;
+    <p>Remaining time per question: ${questionsleftproper}</p>`;
     } else {
         document.querySelector(".result").innerHTML = `
-        <h1>Congrats on finishing the test</h1>`;
+        <h1>Congrats on finishing the test!</h1>`;
         document.querySelector("#timeinput").classList.add("nodisplay");
         document.querySelector("#timerstart").classList.add("nodisplay");
         document.querySelector("#timeperquestion").classList.add("nodisplay");
+        document.getElementById("btn").classList.add("nodisplay");
+        let finished = document.createElement("div");
+        finished.classList.add(`finished`);
+        finished.innerHTML = `
+        <a href="index.html"><button id="newquiz">New Quiz</button></a>`;
+        addbutton = document.querySelector("#qleft");
+        addbutton.append(finished);
     }
 }
 
 
 let timeperquestion = function () {
-    let timeelapsed = document.querySelector("#timeinput").innerHTML;
+    let timeelapsed = newDuration;
      var questionsleft = timeelapsed / i;
+     console.log(timeelapsed);
      return questionsleft;
 }();
 console.log(timeperquestion);
@@ -124,10 +193,10 @@ if (timeperquestion == 0) {
 } else {
 let timeperquestionproper = timeconversion(timeperquestion);
 document.getElementById("timeperquestion").innerHTML = `
-<p>time per question: ${timeperquestionproper}</p>`
+<p>time per question at start: ${timeperquestionproper}</p>`
 ;}
 
-document.getElementById("timeinput").innerHTML = `
+document.getElementById("newduration").innerHTML = `
 <h1>Duration of test: ${t} minutes</h1>`;
 
 
@@ -136,39 +205,11 @@ document.getElementById("timeinput").innerHTML = `
 
 
 
+ });
 
 
-
-
-//  // Create a new form element
-//  const lengthTime = document.createElement("form");
-//  lengthTime.classList.add(`test_duration`);
-
-//  // Populate form with an input and a button
-//  lengthTime.innerHTML = `
-//    <input type="number" name="test_duration" placeholder="Duration in minutes">
-//    <button>Submit</button>
-//  `;
-
-//  // Add event listener to the form submit action
-//  lengthTime.addEventListener("submit", (e) => {
-//    // Stop form from reloading the page
-//    e.preventDefault();
-
-//    // Get the value from the form input
-//    let newValue = lengthTime.querySelector("input").value;
-  
-//    // Set the value of the field
-//    document.querySelector("#timeinput").innerHTML = `${newValue} minutes`;
-
-//    // Clear the form input
-//    lengthTime.querySelector("input").value = "";
-//    return lengthTime.newValue;
-//  });
-
-
-//  // Add form to the end of the list element
-// listElement = document.querySelector("#timeinput")
-//  listElement.append(lengthTime);
+ // Add form to the end of the list element
+listElement = document.querySelector("#timeinput")
+ listElement.append(lengthTime);
 
 
