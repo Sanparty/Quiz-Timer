@@ -60,9 +60,11 @@
 
  // Populate form with an input and a button
  lengthTime.innerHTML = `
-    <h1>Tell me the details of your quiz</h1>
-   <input type="number" id="test_duration" name="test_duration" placeholder="Duration in minutes">
-   <input type="number" id="test_questions" name="test_questions" placeholder="# of Questions">
+    <h1>Dan's Quiz Timer</h1>
+   <p id="quiz_intro">This timer will help you pace yourself during an exam, test, or quiz. Just fill in how much time is alloted for the exam and then how many questions you have to complete. Follow the countdown timer and also get an updated time for each question remaining that you have to complete.</p>
+   <hr class="hr1"> 
+   <input type="number" id="test_duration" name="test_duration" placeholder="Duration in minutes" required> 
+   <input type="number" id="test_questions" name="test_questions" placeholder="# of Questions" required>
    <button>Submit</button>
  `;
 
@@ -76,7 +78,7 @@
    let newQuestions = lengthTime.querySelector("#test_questions").value;
   
    // Set the value of the field
-   document.querySelector("#timeinput").innerHTML = `Good Luck!` ;
+   document.querySelector("#timeinput").innerHTML = `<h1>Good Luck!</h1>` ;
 
    // Clear the form input
    lengthTime.querySelector("input").value = "";

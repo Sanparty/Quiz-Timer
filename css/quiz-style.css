@@ -1,10 +1,63 @@
-h1 {
-  font-size: 40px;
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+  --text-color: black;
+  --secondary-text-color: white;
+  --primary-background-color: grey;
+  --secondary-background-color: black;
+  --button-text-color: black;
+  --primary-font: "Ubuntu", sans-serif;
+  --secondary-font: "Saira", sans-serif;
+  --body-font-weight: 300;
+  --secondary-font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--secondary-font);
+  font-weight: var(--body-font-weight);
+  color: var(--text-color);
+  background-color: var(--primary-background-color);
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+  font-weight: var(--secondary-font-weight);
+}
+
+hr.hr1 {
+  border: 3px solid var(--primary-color);
+  width: 50%;
+  margin: 30px auto;
+}
+
+input,
+button {
+  border: double 2px;
+  border-style: double;
+  margin: 10px;
+  font-size: 20px;
+}
+
+input:hover,
+button:hover {
+  box-shadow: 0 0 10px #ccc;
 }
 
 #timeinput {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
+  width: 75%;
+  margin: 20px auto;
 }
 
 .nodisplay {
@@ -18,17 +71,28 @@ h1 {
 
 #inc,
 #qleft,
-#timeperquestion {
+#timeperquestion,
+#test_duration,
+#test_questions {
   font-size: 20px;
   font-weight: bold;
 }
 
+#quiz_intro {
+  font-size: 20px;
+}
 #newquiz {
   font-size: 20px;
+  width: 50%;
   margin-top: 20px;
 }
-/* Sets the containers height and width */
-.base-timer {
+
+#timer_image {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+Sets the containers height and width .base-timer {
   position: relative;
   height: 300px;
   width: 300px;
