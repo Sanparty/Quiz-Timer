@@ -2,6 +2,31 @@ h1 {
   font-size: 40px;
 }
 
+#timeinput {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.nodisplay {
+  display: none;
+}
+
+#start,
+#btn {
+  font-size: 20px;
+}
+
+#inc,
+#qleft,
+#timeperquestion {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#newquiz {
+  font-size: 20px;
+  margin-top: 20px;
+}
 /* Sets the containers height and width */
 .base-timer {
   position: relative;
@@ -38,12 +63,4 @@ h1 {
 
   /* Sort of an arbitrary number; adjust to your liking */
   font-size: 48px;
-}
-
-#timeinput {
-  font-size: 40px;
-}
-
-.nodisplay {
-  display: none;
 }
