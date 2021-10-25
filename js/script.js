@@ -109,6 +109,8 @@ start.addEventListener("click", function() {
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
+        
+        if (--duration > 0) {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -120,6 +122,9 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
+    } else {
+        document.getElementById("timeinput").innerHTML = "Your time is up!";
+    }
     }, 1000);
 }
 function timerstartClick() { 
