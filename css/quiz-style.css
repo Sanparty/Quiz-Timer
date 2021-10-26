@@ -68,7 +68,10 @@ button:hover {
 #btn {
   font-size: 20px;
 }
-
+#button {
+  display: flex;
+  justify-content: center;
+}
 #inc,
 #qleft,
 #timeperquestion,
@@ -76,6 +79,10 @@ button:hover {
 #test_questions {
   font-size: 20px;
   font-weight: bold;
+}
+
+#inc {
+  text-align: center;
 }
 
 #quiz_intro {
@@ -132,9 +139,6 @@ button:hover {
     margin: auto 0;
   }
   #btn {
-    text-align: center;
-  }
-  #inc {
     text-align: center;
   }
 }
