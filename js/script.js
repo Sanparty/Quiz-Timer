@@ -99,8 +99,8 @@ const finished  = () => {
    var i = newQuestions;
 
    document.getElementById("button").innerHTML = `
-<button id="btn" class="nodisplay">Finished Question</button>
-<input type="text" size="3" align=center id="inc" value="${i}"></input><span id="qleft"> questions left</span>
+<div><button id="btn" class="nodisplay">Finished Question</button></div>
+<div><input type="text" size="3" align=center id="inc" value="${i}"></input><span id="qleft"> questions left</span></div>
 `;
 
 var btn = document.getElementById("btn");

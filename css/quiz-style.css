@@ -124,6 +124,21 @@ button:hover {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  #button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 0;
+  }
+  #btn {
+    text-align: center;
+  }
+  #inc {
+    text-align: center;
+  }
+}
+
 .bottom-timer {
   animation: 1s color-change_2 infinite alternate linear;
 }
