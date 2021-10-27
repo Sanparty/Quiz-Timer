@@ -131,6 +131,10 @@ button:hover {
   }
 }
 
+.bottom-timer {
+  animation: 1s color-change_2 infinite alternate linear;
+}
+
 @media only screen and (max-width: 500px) {
   #button {
     display: flex;
@@ -141,10 +145,6 @@ button:hover {
   #btn {
     text-align: center;
   }
-}
-
-.bottom-timer {
-  animation: 1s color-change_2 infinite alternate linear;
 }
 
 Sets the containers height and width .base-timer {
