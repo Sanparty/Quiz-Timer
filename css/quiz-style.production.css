@@ -1,0 +1,247 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Saira", sans-serif;
+  font-weight: 300;
+  color: black;
+  background-color: grey;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+h5 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+h6 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+hr.hr1 {
+  border: 3px solid black;
+  width: 50%;
+  margin: 30px auto;
+}
+
+input,
+button {
+  border: double 2px;
+  border-style: double;
+  margin: 10px;
+  font-size: 20px;
+}
+
+input:hover,
+button:hover {
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+
+#timeinput {
+  font-size: 50px;
+  font-weight: bold;
+  width: 75%;
+  margin: 20px auto;
+}
+
+.nodisplay {
+  display: none;
+}
+
+#start,
+#btn {
+  font-size: 20px;
+}
+#button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+#inc,
+#qleft,
+#timeperquestion,
+#test_duration,
+#test_questions {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#inc {
+  text-align: center;
+}
+
+#quiz_intro {
+  font-size: 20px;
+}
+#newquiz {
+  font-size: 20px;
+  width: 25%;
+  margin-top: 20px;
+}
+
+#timer_image {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+@-webkit-keyframes color-change_1 {
+  0% {
+    fill: none;
+  }
+
+  50% {
+    fill: white;
+  }
+
+  100% {
+    fill: none;
+  }
+}
+
+@keyframes color-change_1 {
+  0% {
+    fill: none;
+  }
+
+  50% {
+    fill: white;
+  }
+
+  100% {
+    fill: none;
+  }
+}
+
+.top-timer {
+  -webkit-animation: 1s color-change_1 infinite alternate linear;
+  animation: 1s color-change_1 infinite alternate linear;
+}
+
+@-webkit-keyframes color-change_2 {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: none;
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+@keyframes color-change_2 {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: none;
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+.bottom-timer {
+  -webkit-animation: 1s color-change_2 infinite alternate linear;
+  animation: 1s color-change_2 infinite alternate linear;
+}
+
+@media only screen and (max-width: 500px) {
+  #button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: auto 0;
+  }
+  #btn {
+    text-align: center;
+  }
+}
+
+Sets the containers height and width .base-timer {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__label {
+  position: absolute;
+
+  /* Size should match the parent container */
+  width: 300px;
+  height: 300px;
+
+  /* Keep the label aligned to the top */
+  top: 0;
+
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 48px;
+}
