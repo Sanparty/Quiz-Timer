@@ -83,6 +83,7 @@ button:hover {
 #btn {
   font-size: 20px;
 }
+
 #button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,6 +92,7 @@ button:hover {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 #inc,
 #qleft,
 #timeperquestion,
@@ -107,6 +109,7 @@ button:hover {
 #quiz_intro {
   font-size: 20px;
 }
+
 #newquiz {
   font-size: 20px;
   width: 25%;
@@ -198,12 +201,13 @@ button:hover {
     align-items: center;
     margin: auto 0;
   }
+
   #btn {
     text-align: center;
   }
 }
 
-Sets the containers height and width .base-timer {
+.base-timer {
   position: relative;
   height: 300px;
   width: 300px;
